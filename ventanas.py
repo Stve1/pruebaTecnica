@@ -19,14 +19,6 @@ imagen = tk.Label(pant, image=logo, width=150, height=150).pack()
 def inTareas():
     entrada = campo.get()
     tareasL.insert(0, entrada)
- 
-def buscar_elemento():
-    entrada = campo.get()
-    elementos = tareasL.get(0, END)
-    for i, elemento in enumerate(elementos):
-        if elemento == entrada:
-            messagebox.showinfo("Elemento encontrado", f"El elemento '{entrada}' se encuentra en el índice {i}")
-            return
             
 def busTareas():
     entrada = campo.get()
@@ -35,9 +27,9 @@ def busTareas():
     for x, tarea in enumerate(items):
         if tarea == entrada:
             messagebox.showinfo("Búsqueda exitosa.", texExito.format(x+1))
-            tareasL.select()  
         else:
-            messagebox.showinfo("Elemento no encontrado.","La tarea no se encuentra en la lista.")
+            messagebox.showinfo("No encontrado.", "La tarea no se encuentra en la lista.")
+        return
 
 def elimTareas():
     sel = tareasL.curselection()
